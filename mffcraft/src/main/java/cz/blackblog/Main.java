@@ -6,11 +6,6 @@ import cz.blackblog.tools.McUUIDNotFoundException;
 
 public class Main {
     public static void main(String[] args) throws McUUIDNotFoundException {
-        try {
-            System.out.println(PlayerInfo.getUUID("yagarea"));
-        } catch (McUUIDNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        WebServer.launch(8080);
+        WebServer.launch("mc.matfyz.cz", 8088);
     }
 }
