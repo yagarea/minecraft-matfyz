@@ -2,5 +2,5 @@
 
 @section("content")
     <div>
-        <a href="/cas">Login with CAS</a>
+        <a href="${cz.blackblog.website.WebServer.getAuthUrl()}">Login with CAS</a>
     </div>
