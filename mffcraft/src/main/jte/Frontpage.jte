@@ -12,7 +12,7 @@
         </header>
         <section>
             <div>
-                <a role="button" href="${cz.blackblog.website.WebServer.getAuthUrl()}">Login with CAS (WIP)</a>
+                <a role="button" class="contrast outline" href="${cz.blackblog.website.WebServer.getCasAuthURL()}">Login with CAS (WIP)</a>
                 <a role="button" href="/login/">Native login</a>
             </div>
         </section>
