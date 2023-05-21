@@ -22,10 +22,10 @@ public class WhiteList {
         Files.write(Paths.get(this.whiteListFilePath), json.toString().getBytes());
     }
 
-    public void addPlayer(String name) throws IOException {
+    public void addPlayer(String name) throws IOException, RuntimeException {
         JSONObject json = this.readWhiteList();
         JSONObject playerInfo = PlayerInfo.getProfile(name);
-        json.append("", playerInfo); // append to root array
+        json.append("whitelist", playerInfo); // append to root array
         this.writeWhiteList(json);
     }
 }
