@@ -1,5 +1,7 @@
 package cz.blackblog.website;
 
+// this class is used for authenticating users against CAS
+// TODO implement this class
 public class CASAuthenticator {
     private final String casUrl = "https://cas.cuni.cz/cas/";
     private String returnUrl;

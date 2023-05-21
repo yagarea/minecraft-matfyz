@@ -4,8 +4,10 @@ import java.io.FileInputStream;
 import java.util.HashMap;
 import java.util.Scanner;
 
+// this class is used for authenticating users against native user database
 public class NativeAuthenticator {
     private final HashMap<String, String> userDatabase;
+
 
     public NativeAuthenticator(String pathToUserDatabase) {
         this.userDatabase = new HashMap<String, String>();
@@ -23,6 +25,7 @@ public class NativeAuthenticator {
         }
     }
 
+    // returns true if user is authenticated
     public boolean authenticate(String username, String password) {
         if (this.userDatabase.containsKey(username)) {
             return this.userDatabase.get(username).equals(password);

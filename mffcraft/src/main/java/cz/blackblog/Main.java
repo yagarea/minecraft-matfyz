@@ -3,6 +3,11 @@ package cz.blackblog;
 import cz.blackblog.website.WebServer;
 
 public class Main {
+
+    /**
+     * Main method
+     * @param args
+     */
     public static void main(String[] args) {
         if (args.length == 0) {
             WebServer.launch("127.0.0.1", 8080, "src/static/users", "src/static/whitelist.json");

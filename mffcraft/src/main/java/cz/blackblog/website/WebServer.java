@@ -16,17 +16,24 @@ public class WebServer {
     private static PlayerAdditionStatus lastPlayerAdditionStatus;
 
     public static void launch(String address, int port, String userDatabase, String whiteListFile){
+        // init static variables
         WebServer.address = address;
         casAuth = new CASAuthenticator(address);
         nativeAuth = new NativeAuthenticator(userDatabase);
         whiteList = new WhiteList(whiteListFile);
+        // print base path for administaration purposes
         String basePath = new File("").getAbsolutePath();
         System.out.println(basePath);
+        // init Javalin
         JavalinJte.init();
         app = Javalin.create(config -> {}).start(address, port);
+        // Home page
         app.get("/", ctx -> ctx.render("Frontpage.jte"));
+        // Native login page
         app.get("/login/", ctx -> ctx.render("Login.jte"));
+        // Native login page with error message
         app.get("/login-invalid/", ctx -> ctx.render("LoginInvalid.jte"));
+        // authenticate native login
         app.post("/authenticate/", ctx -> {
             String username = ctx.formParam("username");
             String password = ctx.formParam("password");
@@ -38,6 +45,7 @@ public class WebServer {
                 ctx.redirect("/login-invalid/");
             }
         });
+        // Try add player to whitelist
         app.post("/save-player/", ctx -> {
             String nickname = ctx.formParam("nickname");
             lastPlayerAdditionStatus = new PlayerAdditionStatus();
@@ -49,14 +57,18 @@ public class WebServer {
             }
             ctx.redirect("/add-player-done/");
         });
+        // Add player form
         app.get("/add-player/", ctx -> ctx.render("AddPlayer.jte"));
+        // Status page of adding player
         app.get("/add-player-done/", ctx -> ctx.render("AddPlayerDone.jte", Collections.singletonMap("status", lastPlayerAdditionStatus)));
     }
 
+    // get address server is running on
     public static String getAddress(){
         return address;
     }
 
+    // get Port server is running on
     public static int getPort(){
         return app.port();
     }

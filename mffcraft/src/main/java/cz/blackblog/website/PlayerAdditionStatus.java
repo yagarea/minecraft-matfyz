@@ -1,5 +1,6 @@
 package cz.blackblog.website;
 
+// simple dataclass for storing status of player addition
 public class PlayerAdditionStatus {
     private final String message;
     private final boolean isOk;
