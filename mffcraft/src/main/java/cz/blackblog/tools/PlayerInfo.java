@@ -12,7 +12,7 @@ public class PlayerInfo {
         return getProfile(name).getString("id");
     }
 
-    public static JSONObject getProfile(String nickname) {
+    public static JSONObject getProfile(String nickname) throws RuntimeException {
         StringBuilder response = new StringBuilder();
         try {
             URL url = new URL("https://api.mojang.com/users/profiles/minecraft/" + nickname);
@@ -27,7 +27,7 @@ public class PlayerInfo {
         } catch (MalformedURLException e) {
             throw new RuntimeException("Malformed URL");
         } catch (IOException e) {
-            throw new RuntimeException("IOException");
+            throw new RuntimeException("Player not found");
         }
 
         if (response.length() == 0) {
