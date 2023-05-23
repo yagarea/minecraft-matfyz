@@ -3,8 +3,7 @@
 Plugin for [CAS](https://cas.cuni.cz/) authentication on school minecraft server.
 This can be used to manage access of players automatically.
 
-**How it works ?**
-
+**How it works ?**  
 This is simple web application running independently on minecraft server it self.
 When opened users will be greeted by front page with login options.
 After user authenticate him self and proof that he is forwarded to form where he can whitelist his in game nickname.
@@ -16,6 +15,8 @@ Nickname is written to games whitelist file with all additional information game
 - [Cas client](https://github.com/apereo/java-cas-client) - for CAS protocol
 - [JTE](https://jte.gg/) - web templating
 - [Javalin](https://javalin.io/) - web framework
+
+[Maven](https://maven.apache.org/) is used as dependency management.
 
 **Usage**  
 run `Main.java` with arguments:
