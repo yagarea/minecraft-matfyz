@@ -11,7 +11,7 @@ Nickname is written to games whitelist file with all additional information game
 
 This is achieved throw modifying `whitelist.json` of server. Server reads this file every time someone tries to log in.
 
-## [Setup guide](https://github.com/yagarea/minecraft-matfyz/blob/master/docs/setup.md)) | [Usage guide](https://github.com/yagarea/minecraft-matfyz/blob/master/docs/usage.md)
+## [Setup guide](https://github.com/yagarea/minecraft-matfyz/blob/master/docs/setup.md) | [Usage guide](https://github.com/yagarea/minecraft-matfyz/blob/master/docs/usage.md)
 
 ## Technical specification
 
