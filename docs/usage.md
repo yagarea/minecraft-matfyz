@@ -21,7 +21,8 @@ When you log in, you will be redirected to page where you can add your player na
 When player everything worked fine, you will get status message. 
 
 | ![success](https://github.com/yagarea/minecraft-matfyz/blob/master/docs/step2-2.png?raw=true) | ![success](https://github.com/yagarea/minecraft-matfyz/blob/master/docs/step2-3.png?raw=true) |
-| Succes | In this case player with that user name does not exists. |
+|:---------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------:|
+| Succes                                                                                        | In this case player with that user name does not exists.                                      |
 
 
 
