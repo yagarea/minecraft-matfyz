@@ -48,6 +48,32 @@ Now run `./start.sh` again nad your server is running nad ready for players.
 
 
 ## 2. Setuping MFF craft plugin
+Go to directory with your server files. There you will find `server.properties`.
+Open it in your favourite editor and set property `white-list` to `true`.
+
+Or run this command:
+
+```bash
+sed -i 's/white-list=false/white-list=true/g' server.properties
+```
+
+Now when someone will try to join server will be greated with this message:
+
+![not white listed]()
+
+This expected behavior because whitelist is enabled and no players are whitelisted yet.
+
+Now run mff craft app:
+
+```bash
+java -jar <jarfile> <address> <port> <userDatabase> <whiteListFile>
+```
+
+where:
+- `<jarfile>` - your built mffcraft app
+- `<address>` - you want to mff craft run on
+- `<port>` - port on which mffcraft will run
+- `<whitelistFile>` - path to `whitelist.json` in your directory with server files
 
 
 
