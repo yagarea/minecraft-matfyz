@@ -1,5 +1,6 @@
 package cz.blackblog.tools;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -15,21 +16,22 @@ public class WhiteList {
     }
 
     // get whitelist as JSONObject
-    private JSONObject readWhiteList() throws IOException {
+    private JSONArray readWhiteList() throws IOException {
         String content = new String(Files.readAllBytes(Paths.get(this.whiteListFilePath)));
-        return new JSONObject(content);
+        return new JSONArray(content);
     }
 
     // write JSONObject to whitelist.json
-    private void writeWhiteList(JSONObject json) throws IOException {
-        Files.write(Paths.get(this.whiteListFilePath), json.toString().getBytes());
+    private void writeWhiteList(JSONArray jsonArray) throws IOException {
+        String output = jsonArray.toString();
+        Files.write(Paths.get(this.whiteListFilePath), output.getBytes());
     }
 
     // add player to whitelist
     public void addPlayer(String name) throws IOException, RuntimeException {
-        JSONObject json = this.readWhiteList();
+        JSONArray ja = this.readWhiteList();
         JSONObject playerInfo = PlayerInfo.getProfile(name);
-        json.append("whitelist", playerInfo); // append to root array
-        this.writeWhiteList(json);
+        ja.put(playerInfo);
+        this.writeWhiteList(ja);
     }
 }

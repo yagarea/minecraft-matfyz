@@ -13,7 +13,7 @@ public class PlayerInfo {
 
     // get API to get player UUID
     public static String getUUID(String name) throws McUUIDNotFoundException {
-        return getProfile(name).getString("id");
+        return getProfile(name).getString("uuid");
     }
 
     // use mojang API to get player profile
@@ -43,6 +43,9 @@ public class PlayerInfo {
         if (json.has("errorMessage")) {
             throw new RuntimeException("Error: " + json.getString("errorMessage"));
         } else {
+            json.put("uuid", json.getString("id").replaceFirst(
+                    "(\\w{8})(\\w{4})(\\w{4})(\\w{4})(\\w{12})", "$1-$2-$3-$4-$5"));
+            json.remove("id");
             return json;
         }
     }
