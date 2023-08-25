@@ -59,7 +59,7 @@ sed -i 's/white-list=false/white-list=true/g' server.properties
 
 Now when someone will try to join server will be greated with this message:
 
-![not white listed]()
+![not white listed](https://github.com/yagarea/minecraft-matfyz/blob/master/docs/not-white-listed.png?raw=true)
 
 This expected behavior because whitelist is enabled and no players are whitelisted yet.
 
@@ -75,6 +75,5 @@ where:
 - `<port>` - port on which mffcraft will run
 - `<whitelistFile>` - path to `whitelist.json` in your directory with server files
 
-
-
+This is all you need to do to make it work.
 
