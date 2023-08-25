@@ -25,4 +25,12 @@ When player everything worked fine, you will get status message.
 | Succes                                                                                        | In this case player with that user name does not exists.                                      |
 
 
+Now you can join server and enjoy the game!
 
+> **NOTE**
+> Server periodically refreshes whitelist from `whitelist.json` file. If you want to refresh whitelist manually.
+> white
+> ```
+> whitelist reload
+> ```
+> to server console.

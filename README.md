@@ -9,6 +9,9 @@ When opened users will be greeted by front page with login options.
 After user authenticate him self and proof that he is forwarded to form where he can whitelist his in game nickname.
 Nickname is written to games whitelist file with all additional information game needs.
 
+This is achieved throw modifying `whitelist.json` of server. Server reads this file every time someone tries to log in.
+
+
 ## Technical specification
 
 **Used libraries**  
@@ -35,3 +38,4 @@ where:
 
 **License**  
 Published under GPLv3.
+
