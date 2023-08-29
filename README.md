@@ -1,4 +1,4 @@
-# MFFcraft
+# ![MFFCraft logo](https://github.com/yagarea/minecraft-matfyz/blob/master/docs/logo.png?raw=true)
 
 Plugin for [CAS](https://cas.cuni.cz/) authentication on school minecraft server.
 This can be used to manage access of players automatically.
